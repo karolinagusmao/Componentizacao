@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', cursive;
+}
+
+.card{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 10px -1px 64px -4px rgba(52,3,49,0.76);
+    -webkit-box-shadow: 10px -1px 64px -4px rgba(52,3,49,0.76);
+    -moz-box-shadow: 10px -1px 64px -4px rgba(52,3,49,0.76);
+    justify-content: space-between;
+}
+
+.card_left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 12px;
+}
+
+.card_left > span {
+   font-weight: 300;
+}
+
+.card_left > a {
+    margin-top: 15px;
+    font-size: 25px;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.card_left > p {
+    color: gray;
+}
