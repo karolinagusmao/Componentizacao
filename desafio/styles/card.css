@@ -5,7 +5,7 @@
     font-family: 'Segoe UI', cursive;
 }
 
-.card{
+/* .card{
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -36,4 +36,4 @@
 
 .card_left > p {
     color: gray;
-}
+} */

@@ -19,6 +19,7 @@ class CardNews extends HTMLElement {
             
             const linkTitle = document.createElement("a");
             linkTitle.textContent = this.getAttribute("title");
+            linkTitle.href = this.getAttribute("link-url");
                         
             const newsContent = document.createElement("p");
             newsContent.textContent = this.getAttribute("content");
@@ -29,7 +30,10 @@ class CardNews extends HTMLElement {
 
             const cardRight = document.createElement("div");
             cardRight.setAttribute("class", "card_right");
+
             const newsImage = document.createElement("img");
+            newsImage.src = this.getAttribute("photo") || "assets/default.png";
+            newsImage.alt = "Foto noticia"
             cardRight.appendChild(newsImage);
 
             componentRoot.appendChild(cardLeft);
@@ -38,7 +42,45 @@ class CardNews extends HTMLElement {
             return componentRoot;
         }
 
-        styles(){}
+        styles(){
+            const style = document.createElement("style");
+            style.textContent = `
+            .card{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                box-shadow: 10px -1px 64px -4px rgba(52,3,49,0.76);
+                -webkit-box-shadow: 10px -1px 64px -4px rgba(52,3,49,0.76);
+                -moz-box-shadow: 10px -1px 64px -4px rgba(52,3,49,0.76);
+                justify-content: space-between;
+            }
+            
+            .card_left{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 12px;
+            }
+            
+            .card_left > span {
+               font-weight: 300;
+            }
+            
+            .card_left > a {
+                margin-top: 15px;
+                font-size: 25px;
+                color: black;
+                text-decoration: none;
+                font-weight: 500;
+            }
+            
+            .card_left > p {
+                color: gray;
+            }
+            `;
+            
+            return style;
+        }
 }
 
 customElements.define("card-news", CardNews);
